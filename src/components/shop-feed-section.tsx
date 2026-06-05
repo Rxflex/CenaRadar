@@ -65,11 +65,11 @@ export async function ShopFeedSection({ section }: { section: ShopSection }) {
               >
                 {hasImage ? (
                   <div className="relative bg-muted/30">
-                    <div className="min-h-32">
+                    <div className="max-h-72 min-h-32 aspect-[1/2]">
                       <ProductImage
                         slug={p.slug}
                         alt={p.name}
-                        mode="natural"
+                        mode="capped"
                         sizes="(min-width: 1280px) 220px, (min-width: 1024px) 240px, (min-width: 640px) 33vw, 50vw"
                       />
                     </div>

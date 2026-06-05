@@ -8,7 +8,7 @@ export function ProductGridSkeleton({ count = 12 }: { count?: number }) {
           key={`skeleton-${i}`}
           className="flex flex-col gap-3 rounded-xl ring-1 ring-foreground/10 bg-card p-3"
         >
-          <Skeleton className="aspect-[5/6] w-full rounded-lg" />
+          <Skeleton className="aspect-[1/2] w-full max-h-72 rounded-lg" />
           <Skeleton className="h-4 w-3/4" />
           <Skeleton className="h-3 w-1/2" />
         </div>
