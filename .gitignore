@@ -39,3 +39,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local dev-tool configs (opencode, mcp, continuum)
+.continuum/
+.mcp.json
+opencode.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# runtime / debug
+*.log
+.cache/
+.turbo/
+
