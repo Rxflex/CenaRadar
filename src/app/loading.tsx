@@ -1,7 +1,5 @@
-import { Radar, Store, TrendingDown } from "lucide-react";
 import { ProductGridSkeleton } from "@/components/product-grid-skeleton";
 import { ShopFeedSkeleton } from "@/components/shop-feed-skeleton";
-import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
@@ -12,7 +10,7 @@ export default function Loading() {
 				<div className="absolute -bottom-20 -left-20 size-72 rounded-full bg-hot/10 blur-3xl" />
 				<div className="relative max-w-2xl space-y-3">
 					<div className="flex items-center gap-2 text-radar">
-						<Radar className="size-5" />
+						<Skeleton className="h-5 w-5 rounded-md" />
 						<Skeleton className="h-3 w-24" />
 					</div>
 					<Skeleton className="h-9 w-72 sm:h-10" />

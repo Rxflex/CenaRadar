@@ -36,6 +36,9 @@
         "useSemanticElements": "warn",
         "useKeyWithClickEvents": "warn"
       },
+      "performance": {
+        "noImgElement": "off"
+      },
       "security": {
         "noDangerouslySetInnerHtml": "warn"
       }
