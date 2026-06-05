@@ -34,7 +34,7 @@ export default async function Home() {
     loadHomeProducts(),
   ]);
 
-  const totalProducts = index.products.length;
+  const totalProducts = Math.max(firstPage.total, index.products.length);
   const topCategories = index.categories.slice(0, 8);
 
   return (

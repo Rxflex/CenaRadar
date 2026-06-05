@@ -4,6 +4,8 @@ import { Code, Heart, Radar } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Separator } from "@/components/ui/separator";
 
+const REPO_URL = "https://github.com/Rxflex/CenaRadar";
+
 export function Footer() {
   const t = useTranslations("common");
   const tf = useTranslations("footer");
@@ -24,28 +26,8 @@ export function Footer() {
             </div>
           </div>
           <div className="space-y-3 sm:text-right">
-            <div className="text-xs font-medium text-foreground">
-              {tf("tech")}
-            </div>
-            <div className="flex flex-wrap gap-1.5 sm:justify-end">
-              {[
-                "Next.js 16",
-                "React 19",
-                "TanStack Query",
-                "Zustand",
-                "next-intl",
-                "Lenis",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border bg-card px-2 py-0.5 text-[10px] font-mono uppercase tracking-wide"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
             <a
-              href="https://github.com"
+              href={REPO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs hover:text-foreground"

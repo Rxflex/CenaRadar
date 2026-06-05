@@ -88,7 +88,14 @@
     "packSize": "balení",
     "packSizes": "velikostí",
     "sortedByUnit": "Řazeno dle ceny za jednotku",
-    "compareNote": "Přibližné srovnání — velikosti balení se mohou lišit"
+    "compareNote": "Přibližné srovnání — velikosti balení se mohou lišit",
+    "bestPerUnit": "Nejlepší cena za jednotku",
+    "fromTotal": "Celkem:",
+    "alsoCheapestTotal": "Nejnižší celková cena: {shop} — {price}{pack}",
+    "savingsPerUnit": "Úspora za jednotku: {amount}",
+    "sortByUnit": "Za jednotku",
+    "sortByTotal": "Za balení",
+    "bestTotalBadge": "Nejnižší cena"
   },
   "shop": {
     "title": "Obchody",
@@ -103,9 +110,8 @@
   "footer": {
     "about": "O službě",
     "aboutText": "Cena Radar agreguje data z kupi.cz, abyste vždy viděli nejlepší cenu. Neukládáme uživatelská data, nezobrazujeme reklamy a nic neprodáváme.",
-    "tech": "Technologie",
     "disclaimer": "Všechna data patří kupi.cz. Tato služba je poskytována pouze pro informační účely.",
-    "openSource": "Open source",
+    "openSource": "Zdrojový kód na GitHubu",
     "madeWith": "Vyrobeno s láskou ke slevám"
   }
 }

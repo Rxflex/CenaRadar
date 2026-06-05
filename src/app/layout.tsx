@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { I18nProvider } from "@/components/i18n-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { DEFAULT_LOCALE } from "@/lib/locales";
 import "./globals.css";
 import "lenis/dist/lenis.css";
 
@@ -56,8 +57,8 @@ export const metadata: Metadata = {
     description:
       "Compare prices on discounted products from Czech stores in real time.",
     siteName: "Cena Radar",
-    locale: "ru_RU",
-    alternateLocale: ["cs_CZ", "en_US"],
+    locale: "cs_CZ",
+    alternateLocale: ["ru_RU", "en_US"],
     type: "website",
   },
   twitter: {
@@ -69,12 +70,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+// Static lang default (the negotiated locale is applied by HtmlLangSync
+// right after hydration). Keeping the root layout sync is required by
+// Next.js 16 cacheComponents — async layouts cannot call cookies/headers
+// without a Suspense boundary, and <html> sits above any such boundary.
+const LANG_DEFAULT = DEFAULT_LOCALE;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="ru"
+      lang={LANG_DEFAULT}
       suppressHydrationWarning
       className={`${inter.variable} ${jetbrains.variable} h-full antialiased`}
     >

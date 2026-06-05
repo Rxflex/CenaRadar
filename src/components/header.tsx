@@ -24,6 +24,7 @@ export function Header() {
   const tn = useTranslations("nav");
   const ts = useTranslations("search");
   const setOpen = usePalette((s) => s.setOpen);
+  const togglePalette = usePalette((s) => s.toggle);
   const mobileOpen = useMobileMenu((s) => s.open);
   const setMobileOpen = useMobileMenu((s) => s.setOpen);
   const query = useSearch((s) => s.query);
@@ -40,7 +41,7 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="relative z-40 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:sticky md:top-0">
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4">
           <Link
             href="/"
@@ -99,6 +100,15 @@ export function Header() {
             />
             <LocaleSwitcher />
             <ThemeToggle />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              aria-label={ts("placeholder")}
+              onClick={() => togglePalette()}
+            >
+              <Search className="size-4" />
+            </Button>
             <Button
               variant="ghost"
               size="icon"

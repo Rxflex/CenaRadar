@@ -88,7 +88,14 @@
     "packSize": "size",
     "packSizes": "sizes",
     "sortedByUnit": "Sorted by per-unit price",
-    "compareNote": "Approximate comparison — pack sizes may differ"
+    "compareNote": "Approximate comparison — pack sizes may differ",
+    "bestPerUnit": "Best per-unit price",
+    "fromTotal": "Total:",
+    "alsoCheapestTotal": "Lowest total: {shop} — {price}{pack}",
+    "savingsPerUnit": "Per-unit savings: {amount}",
+    "sortByUnit": "Per unit",
+    "sortByTotal": "Per pack",
+    "bestTotalBadge": "Cheapest total"
   },
   "shop": {
     "title": "Shops",
@@ -103,9 +110,8 @@
   "footer": {
     "about": "About",
     "aboutText": "Cena Radar aggregates data from kupi.cz so you always see the best price. We don't store user data, show no ads, and sell nothing.",
-    "tech": "Tech",
     "disclaimer": "All data belongs to kupi.cz. This service is provided for informational purposes only.",
-    "openSource": "Open source",
+    "openSource": "Source on GitHub",
     "madeWith": "Built with love for deals"
   }
 }
