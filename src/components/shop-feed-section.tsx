@@ -64,15 +64,13 @@ export async function ShopFeedSection({ section }: { section: ShopSection }) {
                 className="t-card-lift overflow-hidden transition-shadow hover:ring-foreground/20"
               >
                 {hasImage ? (
-                  <div className="relative bg-muted/30">
-                    <div className="max-h-72 min-h-32 aspect-[1/2]">
-                      <ProductImage
-                        slug={p.slug}
-                        alt={p.name}
-                        mode="capped"
-                        sizes="(min-width: 1280px) 220px, (min-width: 1024px) 240px, (min-width: 640px) 33vw, 50vw"
-                      />
-                    </div>
+                  <div className="relative max-h-72 overflow-hidden bg-muted/30">
+                    <ProductImage
+                      slug={p.slug}
+                      alt={p.name}
+                      mode="capped"
+                      sizes="(min-width: 1280px) 220px, (min-width: 1024px) 240px, (min-width: 640px) 33vw, 50vw"
+                    />
                     <Badge
                       variant="secondary"
                       className="absolute left-2 top-2 bg-radar/15 font-semibold text-radar backdrop-blur tabular-nums"

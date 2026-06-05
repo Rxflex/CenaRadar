@@ -14,10 +14,13 @@ type Mode = "natural" | "capped" | "fixed";
  *   without any server-side probing. No CLS for image swaps, but very
  *   tall sources (e.g. water/oil bottles, 1:3+) make their cards
  *   disproportionately large.
- * - `capped` (default for masonry cards): wraps the image in a 1:2 box
- *   capped at `max-h-72` (288px). Tall images are scaled down to fit via
- *   `object-contain` — no more 600px-tall bottle cards, no info loss, just
- *   some side letterboxing on the very tall sources.
+ * - `capped` (default for masonry cards): image renders at 100% width
+ *   with `max-h-72` (288px) and `object-fit: cover` from center. Short
+ *   sources (1:1, 1:1.5) keep their natural aspect ratio, giving the
+ *   masonry its height variety. Tall sources (1:2+) cap at 288px and
+ *   crop the top/bottom equally — bottle cards stay compact without
+ *   the loss of the bottle's top label. The wrapper has `overflow-hidden`
+ *   so the image can't bleed past the cap.
  * - `fixed`: caller specifies `intrinsicWidth` and `intrinsicHeight` and
  *   the image is rendered at that aspect ratio regardless of the source.
  *   Used by the product detail hero and the search palette.
@@ -85,7 +88,9 @@ export function ProductImage({
 		);
 	}
 
-	// mode === "capped" — 1:2 box, max 288px tall, image scaled with object-contain.
+	// mode === "capped" — natural aspect ratio with a 288px ceiling;
+	// tall sources get center-cropped by object-fit:cover. The wrapper
+	// supplies `overflow-hidden` so the image can't bleed past max-h.
 	return (
 		<img
 			src={url}
@@ -94,7 +99,7 @@ export function ProductImage({
 			decoding="async"
 			sizes={sizes}
 			className={cn(
-				"size-full object-contain",
+				"h-auto w-full max-h-72 object-cover object-center",
 				isLast ? "opacity-60" : "",
 				className,
 			)}

@@ -23,15 +23,13 @@ export function ProductCard({ product }: { product: ProductSummary }) {
     >
       <Link href={`/product/${product.slug}`} className="block">
         {hasImage ? (
-          <div className="relative bg-muted/30">
-            <div className="max-h-72 min-h-32 aspect-[1/2]">
-              <ProductImage
-                slug={product.slug}
-                alt={product.name}
-                mode="capped"
-                sizes="(min-width: 1280px) 240px, (min-width: 1024px) 280px, (min-width: 640px) 33vw, 50vw"
-              />
-            </div>
+          <div className="relative max-h-72 overflow-hidden bg-muted/30">
+            <ProductImage
+              slug={product.slug}
+              alt={product.name}
+              mode="capped"
+              sizes="(min-width: 1280px) 240px, (min-width: 1024px) 280px, (min-width: 640px) 33vw, 50vw"
+            />
             <Badge
               variant="secondary"
               className="absolute left-2 top-2 bg-radar/15 text-radar backdrop-blur"
